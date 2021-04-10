@@ -21,10 +21,12 @@
  }
  
  body{
+	 margin:0px;
+	 padding:0px;
 	font-family:papyrus;
 	font-size:20px;
 	color:coral;
-	background-color:aquamarine;	
+	background-color:rgb(205 255 255);	
  }
  
  
@@ -50,11 +52,11 @@
 	 background-size:cover;
 	 border:3px white solid;
  }
-.card1{
+ .hare{
 	 background-image:url("harealone.png");
 	 
 }
-  .card2{
+  .tortoise{
 	   background-image:url("tortoise.png");
   }
   
