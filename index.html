@@ -1,6 +1,7 @@
 <!Doctype html>
 <html>
 	<head>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>cyoa</title>
 		<link rel ="stylesheet" type="text/css" href="style.css">
@@ -10,21 +11,86 @@
 	<nav>
 		<ul>
 			<li><a href="#">Home</a> </li>
-			<li><a href="#">About</a> </li>
+			<li><a href="#">About us</a> </li>
 			<li><a href="#">contact</a> </li>
-			<li><a href ="#">follow</a> </li>
+			<li><a href ="#">Videos</a> </li>
 		</ul>
 	</nav>
-	  <h1>Tortoise and Hare</h1>
-	   <h3>Choose Your Own Adventure Game</h3>
-	   
-		    <img src="rabbit.jpg"/>
-			
-		<a href="page1.html">
-  		<button>START GAME</button>
-		</a>
+	<div class= "container">
+		<div class="title">		
+			<h1>Tortoise and Hare</h1>
+			  <h3>Choose Your Own Adventure Game</h3>
+		</div> 
+		<div class="image"> 
+				<img src="tortoisenew.png"/>
+				<a href="page1.html">
+				<button>START GAME</button>
+				</a>
+		</div>
+	</div>		
+		
 		<footer id="copyright">
 		<p>copyright&copy; 2021nimzy's creations</p>
+		</footer>
+		
+        <!-- script copied from:https://moodle.napier.ac.uk/mod/workbook/view.php?id=1700515&chapterid=177314-->
+		 <script>
+
+            window.onload = function() {
+
+                var audio = new (window.AudioContext || window.webkitAudioContext)();
+
+                position = 0,
+
+                scale = { b: 233, c: 261, d: 293, e: 329, f: 349, g: 391, A: 440, B: 493, C: 523, D: 587, E: 659, F: 698, G: 783, a: 880 },
+				
+				<!--credit:Gummy bears song from https://www.youtube.com/watch?v=vpTFyYiAxAE-->
+                song = "AAA-CAA-AAA-CEE---EEE-DDDDDD-E-D-C-A----AAA-C-AA--AAA-C-E-EEE-DDDDD-E-D-C-A";
+				
+            setInterval(play, 250);
+ 
+
+            function createOscillator(freq) {
+
+                var attack = 10, decay = 250, osc = audio.createOscillator();
+
+                osc.frequency.value = freq;
+
+                osc.type = "square";
+
+                osc.connect(audio.destination);
+
+                osc.start(0);
+
+ 
+
+                setTimeout(function() {
+
+                    osc.stop(0);
+
+                    osc.disconnect(audio.destination);
+
+                }, decay)
+
+            }
+
+ 
+
+            function play() {
+
+                var note = song.charAt(position), freq = scale[note];
+
+                position += 1;
+
+                if(position >= song.length) { position = 0; }
+
+                if(freq) { createOscillator(freq); }
+
+            }
+
+        };
+
+        </script>  
 
 </body>
 </html>
