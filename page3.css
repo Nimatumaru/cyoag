@@ -1,0 +1,66 @@
+
+.row{
+	display:flex;
+	/*height:100%;*/
+	align-items:center;
+	}
+ 
+ .col{
+	flex-basis:60%;
+	text-align:center;
+	display:block;
+	 color: coral;
+	 margin-left: 3em;
+	 font-family:papyrus;
+	 background-color: aquamarine;
+	border:3px white solid;
+	/*padding:5px;*/
+	border-radius:10px;
+	margin:10px;
+ }
+ 
+ body{
+	 margin:0px;
+	 padding:0px;
+	font-family:papyrus;
+	font-size:20px;
+	color:coral;
+	background-color:rgb(205 255 255);	
+ }
+ 
+ 
+/*h2{
+	text-align:center;
+}
+ p{
+	 display:block;
+	 color: coral;
+	 margin-left: 3em;
+	 font-family:calibre
+ }*/
+ .card{
+	 width:200px;
+	 height:230px;
+	 display:block-inline;
+	 border-radius:10px;
+	 padding:15px 25px;
+	 box-sizing:border-box;
+	 cursor:pointer;
+	 margin:40px 15px;	
+	 background-position:center;
+	 background-size:cover;
+	 border:3px white solid;
+ }
+.card1{
+	 background-image:url("fight.png");	 
+}
+  .card2{
+	   background-image:url("tortoise.png");
+  }
+  
+  img{
+	
+	 width:105%;
+	
+	  
+	  }
