@@ -6,14 +6,13 @@
 		<title>cyoa</title>
 		<link rel ="stylesheet" type="text/css" href="style.css">
 	</head>
-	
 	<body>
 	<nav>
 		<ul>
 			<li><a href="#">Home</a> </li>
-			<li><a href="#">About us</a> </li>
-			<li><a href="#">contact</a> </li>
-			<li><a href ="#">Videos</a> </li>
+			<li><a href="aboutus.html">About us</a> </li>
+			<li><a href="contact.html">contact us</a> </li>
+			<li><a href ="videos.html">Videos</a> </li>
 		</ul>
 	</nav>
 	<div class= "container">
@@ -30,53 +29,64 @@
 	</div>		
 		
 		<footer id="copyright">
-		<p>copyright&copy; 2021nimzy's creations</p>
+		<p class="sign">copyright&copy; 2021nimzy's creations</p>
 		</footer>
-		
+		 
         <!-- script copied from:https://moodle.napier.ac.uk/mod/workbook/view.php?id=1700515&chapterid=177314-->
-		 <script>
+		 <script> 
+				window.onload = function() {
+	 								
+				var audio = new (window.AudioContext || window.webkitAudioContext)();
+				
+				const g =audio.createGain();
+				
+				g.gain.value = 0.1;
+				g.connect(audio.destination);
 
-            window.onload = function() {
+                position = 0;
 
-                var audio = new (window.AudioContext || window.webkitAudioContext)();
-
-                position = 0,
-
-                scale = { b: 233, c: 261, d: 293, e: 329, f: 349, g: 391, A: 440, B: 493, C: 523, D: 587, E: 659, F: 698, G: 783, a: 880 },
+                scale = { b: 233, c: 261, d: 293, e: 329, f: 349, g: 391, A: 440, B: 493, C: 523, D: 587, E: 659, F: 698, G: 783, a: 880 };
 				
 				<!--credit:Gummy bears song from https://www.youtube.com/watch?v=vpTFyYiAxAE-->
                 song = "AAA-CAA-AAA-CEE---EEE-DDDDDD-E-D-C-A----AAA-C-AA--AAA-C-E-EEE-DDDDD-E-D-C-A";
 				
+				
             setInterval(play, 250);
- 
-
+			
             function createOscillator(freq) {
+			
+			console.log(g)
+				
+				var attack = 10, decay = 250, osc = audio.createOscillator();
 
-                var attack = 10, decay = 250, osc = audio.createOscillator();
-
-                osc.frequency.value = freq;
-
+			    osc.frequency.value = freq;
+							
                 osc.type = "square";
 
-                osc.connect(audio.destination);
+                osc.connect(g);
+				
+				
 
-                osc.start(0);
-
- 
-
+                osc.start(0);			
+				
+				
                 setTimeout(function() {
+				
+                    osc.stop(0);	
+					osc.disconnect(g);
 
-                    osc.stop(0);
-
-                    osc.disconnect(audio.destination);
 
                 }, decay)
-
+				
+				  
             }
 
- 
+				
 
             function play() {
+			
+						console.log(2)
+
 
                 var note = song.charAt(position), freq = scale[note];
 
@@ -88,7 +98,8 @@
 
             }
 
-        };
+        };       
+		  
 
         </script>  
 
