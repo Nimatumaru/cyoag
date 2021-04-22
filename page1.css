@@ -13,7 +13,7 @@
 	 margin-left: 3em;
 	 font-family:papyrus;
 	 background-color: aquamarine;
-	border:3px white solid;
+	border:3px coral solid;
 	border-radius:10px;
 	margin:10px;
  }
@@ -28,15 +28,7 @@
  }
  
  
-/*h2{
-	text-align:center;
-}
- p{
-	 display:block;
-	 color: coral;
-	 margin-left: 3em;
-	 font-family:calibre
- }*/
+
  .card{
 	 width:200px;
 	 height:230px;
@@ -48,7 +40,7 @@
 	 margin:40px 15px;	
 	 background-position:center;
 	 background-size:cover;
-	 border:3px white solid;
+	 border:3px coral solid;
  }
  .hare{
 	 background-image:url("harealone.png");
@@ -64,3 +56,30 @@
 	
 	  
 	  }
+	  
+	   nav{
+  	text-align:center-right;
+	background-color:aliceblue;
+	padding:5px;
+	width:1500px;
+
+  }
+  
+  nav ul li{
+	  list-style: none;
+	  display:inline-block;
+	  margin-left:50px;
+	 	}
+  
+  nav ul li a{
+	  text-decoration:none;
+	   font-family:comic;
+	   color:coral
+	  
+	  
+  }
+  .sign{
+		color:red;
+		font-family:papyrus;
+		text-align:center;
+		  }
